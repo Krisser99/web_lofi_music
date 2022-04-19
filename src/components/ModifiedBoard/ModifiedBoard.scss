@@ -1,0 +1,116 @@
+$primary-color: #f3a952;
+$default-color: #4e5054;
+
+.modified {
+  position: absolute;
+  width: 60px;
+  top: 250px;
+  right: 50px;
+  background-color: transparent;
+}
+
+.mood__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 8px;
+  border-radius: 33px 33px 0 0;
+  border-bottom: 3px solid $default-color;
+  background-color: rgba(0, 0, 0, 0.8);
+  & > i {
+    font-size: 32px;
+    color: $default-color;
+  }
+  &.active i {
+    color: $primary-color;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -50px;
+  right: 60px;
+  width: 370px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mood {
+  &__title {
+    font-size: 16px;
+    color: #fff;
+  }
+  &__option {
+    color: $default-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 8px 0;
+  }
+  &__type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: #14141d;
+    &.active i {
+      color: $primary-color;
+    }
+    &.active .mood__text {
+      color: #fff;
+    }
+  }
+}
+
+.wrapper .volume {
+  margin: 26px 0 16px;
+  color: $primary-color;
+  &__slider {
+    color: $primary-color;
+    height: 10px;
+    & .MuiSlider-rail {
+      color: #4e5054;
+    }
+  }
+}
+
+.noise {
+  &__title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  &__options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    & > span {
+      font-size: 14px;
+      color: $default-color;
+    }
+    & > .slider {
+      height: 10px !important;
+      width: 180px !important;
+      color: $primary-color;
+      & .MuiSlider-rail {
+        color: #4e5054;
+      }
+    }
+  }
+}
+
+.background__noise::-webkit-scrollbar {
+  display: none;
+}
+
+.background__noise {
+  overflow-y: scroll;
+}
+

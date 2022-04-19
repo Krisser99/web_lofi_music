@@ -1,0 +1,36 @@
+$blue: #91ccc2;
+
+.wrap {
+  position: absolute;
+  top: 110px;
+  right: 300px;
+}
+
+.icon {
+  &-rain {
+    padding: 5px 8px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    transition: all ease-out 0.2s;
+    & > i {
+      font-size: 24px;
+      color: #fff;
+    }
+    &:hover {
+      padding: 6px 16px;
+      border: 3px solid $blue;
+      border-radius: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  &-clear {
+    padding: 6px 16px;
+    border: 3px solid $blue;
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    & > i {
+      font-size: 24px;
+      color: $blue;
+    }
+  }
+}
