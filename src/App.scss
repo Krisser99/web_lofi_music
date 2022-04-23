@@ -1,0 +1,22 @@
+@media (min-width: 49.375em) { 
+  .mobie {
+    display: none;
+  }
+}
+
+@media (max-width: 49.375em) { 
+  .pc {
+    display: none;
+  }
+  .mobie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    & > h2 {
+      color: #fff;
+      font-size: 32px;
+    }
+  }
+}
