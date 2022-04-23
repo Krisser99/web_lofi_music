@@ -1,0 +1,18 @@
+
+
+.song__info {
+  position: absolute;
+  bottom: 40px;
+  left: 3%;
+  & > span {
+    color: #fff;
+  }
+}
+
+
+.controller {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+}

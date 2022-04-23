@@ -9,6 +9,7 @@ $default-color: #4e5054;
   background-color: transparent;
 }
 
+// MOOD
 .mood__icon {
   display: flex;
   justify-content: center;
@@ -16,13 +17,17 @@ $default-color: #4e5054;
   padding: 15px 8px;
   border-radius: 33px 33px 0 0;
   border-bottom: 3px solid $default-color;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all ease 0.25s;
   & > i {
     font-size: 32px;
     color: $default-color;
   }
   &.active i {
     color: $primary-color;
+  }
+  &.active.mood__icon {
+    border-radius: 0px 33px 0 0;
   }
 }
 
@@ -36,7 +41,7 @@ $default-color: #4e5054;
   height: 450px;
   padding: 20px;
   border-radius: 24px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .mood {
@@ -112,5 +117,154 @@ $default-color: #4e5054;
 
 .background__noise {
   overflow-y: scroll;
+}
+
+// Scene
+.background_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 8px;
+  border-bottom: 3px solid $default-color;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all ease 0.25s;
+  & > i {
+    font-size: 32px;
+    color: $default-color;
+  }
+  &.active i {
+    color: $primary-color;
+  }
+}
+
+.wall {
+  &__chill {
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: -150px;
+      right: 60px;
+      width: 350px;
+      padding: 16px 20px;
+      border-radius: 24px;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    &-header {
+      display: flex;
+      margin-bottom: 5px;
+      & > i {
+        color: #fff;
+        transition: all ease 0.2s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+    }
+    &-image {
+      margin: 7px 0;
+      &.active img {
+        opacity: 1;
+      }
+      & > img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 24px;
+        opacity: 0.5;
+        transition: all ease 0.3s;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -150px;
+    right: 60px;
+    width: 350px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0.9);
+    &-image {
+      text-align: center;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    color: #fff;
+    font-size: 20px;
+  }
+  &__image {
+    margin: 10px 0;
+    transition: all ease 0.3s;
+    & > img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      opacity: 0.5;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+    &.active img {
+      opacity: 1;
+    }
+  }
+}
+
+.disable {
+  & > img {
+    opacity: 0.5 !important;
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+// Focus
+
+.focus {
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 8px;
+    border-radius: 0 0 33px 33px;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: all ease 0.25s;
+    & > i {
+      font-size: 32px;
+      color: $default-color;
+    }
+    &.active i {
+      color: $primary-color;
+    }
+    &.active.focus__icon {
+      border-radius: 0 0 33px 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -150px;
+    right: 60px;
+    width: 350px;
+    height: 600px;
+    padding: 20px 16px;
+    border-radius: 24px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 

@@ -1,0 +1,23 @@
+.about {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  & > h3 {
+    color: #fff;
+    font-size: 32px;
+  }
+}
+
+.back_home {
+  outline: none;
+  padding: 8px 16px;
+  color: #000;
+  border: none;
+  border-radius: 24px;
+  margin-top: 50px;
+  &:hover {
+    opacity: 0.9;
+  }
+}

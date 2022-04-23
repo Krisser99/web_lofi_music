@@ -1,0 +1,28 @@
+$primary-color: #f3a952;
+$default-color: #4e5054;
+.btn {
+  &__control {
+    display: flex;
+  align-items: center;
+  & > button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    & > i {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+  }
+  &__event {
+    margin: 0 50px;
+    &-repeat {
+      margin: 0 46px;
+    }
+  }
+  
+}
+
+.btn__control .active {
+  color: $primary-color;
+}

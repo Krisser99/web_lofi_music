@@ -1,4 +1,4 @@
-import { SET_MODE, SET_MOOD, SET_RAIN, SET_VOLUME } from "../constants/actionType"
+import { ADD_LIST, DONE_LIST, EDIT_LIST, REMOVE_LIST, SET_BACKGROUND, SET_MODE, SET_MOOD, SET_RAIN, SET_VOLUME, } from "../constants/actionType"
 
 
 export const setMode = payload => ({
@@ -23,25 +23,56 @@ export const setVolume = payload => ({
   volume: payload
 })
 
+export const setBackGround = payload => ({
+  type: SET_BACKGROUND,
+  background: payload
+})
 
+export const addList = content => dispatch => (
+  dispatch({
+    type: ADD_LIST,
+    payload: {
+      content: content,
+      finish: false
+    }
+  }))
+
+export const doneList = payload => dispatch => (
+  dispatch({
+    type: DONE_LIST,
+    payload: payload
+  })
+)
+
+export const removeList = payload => dispatch => (
+  dispatch({
+    type: REMOVE_LIST,
+    payload: payload
+  })
+)
+
+export const editList = payload => ({
+  trpe: EDIT_LIST,
+  payload: payload
+})
 
 export const changeDayNight = (currentStatus) => {
   let status
-  if(currentStatus === 'day') {
+  if (currentStatus === 'day') {
     status = 'night'
-  } else if(currentStatus === 'night') {
+  } else if (currentStatus === 'night') {
     status = 'day'
-  } 
+  }
 
   return (dispatch) => {
     dispatch(setMode(status))
   }
-} 
+}
 
 export const changeRainStatus = (currentStatus, value, bool) => {
   console.log(currentStatus)
   let status
-  if(currentStatus === 'clear') {
+  if (currentStatus === 'clear') {
     status = 'rain'
     bool = true
   } else if (currentStatus === 'rain') {
@@ -50,7 +81,7 @@ export const changeRainStatus = (currentStatus, value, bool) => {
   }
   console.log(status)
   return (dispatch) => {
-    dispatch(setRain(status, value , bool))
+    dispatch(setRain(status, value, bool))
   }
 }
 
@@ -61,8 +92,15 @@ export const changeMoodStatus = currentStatus => {
   }
 }
 
-export const changeValueStatus = currentStatus => {
+export const changeValueVolumeStatus = currentStatus => {
   return dispatch => {
     dispatch(setVolume(currentStatus))
   }
 }
+
+export const changeSceneStatus = currentStatus => {
+  return dispatch => {
+    dispatch(setBackGround(currentStatus))
+  }
+}
+

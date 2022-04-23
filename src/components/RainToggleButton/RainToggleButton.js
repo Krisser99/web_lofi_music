@@ -32,7 +32,7 @@ function RainToggleButton() {
           className='toggle'
         >
           <div className={iconChange ? 'icon-rain' : 'icon-clear'}>
-            <i className='fas fa-cloud-rain'></i>
+            <i className={iconChange ? 'fa-solid fa-cloud-sun sunshine' : 'fas fa-cloud-rain' }></i>
           </div>
         </div>
       </div>

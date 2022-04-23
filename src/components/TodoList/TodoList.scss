@@ -1,0 +1,43 @@
+.todo {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0px;
+    top: 234px;
+    padding: 20px 16px;
+    border-radius: 24px;
+    & > h4 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+  &__item {
+    margin-bottom: 10px;
+    &-wrap {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      height: 230px;
+      overflow-y: scroll;
+    }
+  }
+  &__space {
+    height: 16px;
+  }
+}
+
+.btn-group-lg > .btn,
+.btn-lg {
+  padding: 0.5rem 3.9rem;
+}
+
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.45rem 1.5rem;
+}
+
+.col-md-4 {
+  padding-right: 0px;
+}

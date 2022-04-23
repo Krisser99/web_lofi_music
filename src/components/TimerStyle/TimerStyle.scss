@@ -1,0 +1,18 @@
+.timerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  background-color: #404549;
+  border-radius: 6px;
+  display: inline-block;
+  height: 6px;
+  margin: 5px 0;
+  width: 6px;
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    
+  }
+}

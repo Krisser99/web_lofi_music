@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactAudioPlayer from 'react-audio-player'
+import { useSelector } from 'react-redux'
 
 function NoiseSound(props) {
-
   const {
     traffic,
     fireplace,

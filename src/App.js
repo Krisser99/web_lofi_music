@@ -7,19 +7,21 @@ import About from './components/About/About'
 import Login from './components/Login/Login'
 
 function App() {
+
   return (
     <>
       <Routes>
         <Route path='/' element={
-        <>
-          <Header /> <Home />
-        </>}
+          <>
+            <Header /> <Home />
+          </>}
         />
         <Route path='/login' element={<Login />} />
-        <Route path='/About' element={<About />} /> 
+        <Route path='/about' element={<About />} />
       </Routes>
     </>
   );
+
 }
 
 export default App;

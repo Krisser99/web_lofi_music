@@ -1,9 +1,9 @@
 $blue: #91ccc2;
-
+$primary-color: #f3a952;
 .wrap {
   position: absolute;
   top: 110px;
-  right: 300px;
+  left: 150px;
 }
 
 .icon {
@@ -33,4 +33,8 @@ $blue: #91ccc2;
       color: $blue;
     }
   }
+}
+
+.sunshine {
+  color: $primary-color !important;
 }

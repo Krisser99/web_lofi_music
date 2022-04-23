@@ -1,0 +1,43 @@
+.digit {
+  &__wrap {
+    text-align: center;
+  }
+  &__title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 7px 25px 10px;
+  }
+  &__num {
+    position: relative;
+    background-color: #404549;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    flex: 1 1 25%;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    font-size: 30px;
+    padding: 10px 12px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: #232323;
+      height: 2px;
+      bottom: 50%;
+      opacity: 0.4;
+      top: 50%;
+    }
+    &-left {
+      margin-right: 5px;
+    }
+  }
+}

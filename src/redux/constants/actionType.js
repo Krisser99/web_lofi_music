@@ -2,6 +2,9 @@ export const SET_MODE = 'SET_MODE'
 export const SET_RAIN = 'SET_RAIN'
 export const SET_MOOD = 'SET_MOOD'
 export const SET_VOLUME = 'SET_VOLUME'
-
-
+export const SET_BACKGROUND = 'SET_BACKGROUND'
+export const ADD_LIST = 'ADD_LIST'
+export const REMOVE_LIST = 'REMOVE_LIST'
+export const EDIT_LIST = 'EDIT_LIST'
+export const DONE_LIST = 'DONE_LIST'
 

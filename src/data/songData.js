@@ -1,0 +1,242 @@
+export const chill = [
+  {
+    id: 0,
+    name: 'Chilly',
+    mood: 'chill',
+    src: './assets/lofi/chill1.mp3',
+  },
+  {
+    id: 1,
+    name: 'Hot',
+    mood: 'chill',
+    src: './assets/lofi/chill2.mp3',
+  },
+  {
+    id: 2,
+    name: 'Pepper',
+    mood: 'chill',
+    src: './assets/lofi/chill3.mp3',
+  },
+  {
+    id: 3,
+    name: '4OClock',
+    mood: 'chill',
+    src: './assets/lofi_music/4OClockLofiVersion-Smyang-5448501.mp3',
+  },
+  {
+    id: 4,
+    name: 'CityRain',
+    mood: 'chill',
+    src: './assets/lofi_music/CityRainLofiHipHop-VA-5956864.mp3',
+  },
+  {
+    id: 5,
+    name: 'HouseOfCards',
+    mood: 'chill',
+    src: './assets/lofi_music/HouseOfCardsLofiVersion-Smyang-5448502.mp3',
+  },
+  {
+    id: 6,
+    name: 'INeedU',
+    mood: 'chill',
+    src: './assets/lofi_music/INeedULofiVersion-Smyang-5448499.mp3',
+  },
+  {
+    id: 7,
+    name: 'MorningCoffee',
+    mood: 'chill',
+    src: './assets/lofi_music/MorningCoffeeLofi-VA-6098297.mp3',
+  },
+  {
+    id: 8,
+    name: 'SoFarAway',
+    mood: 'chill',
+    src: './assets/lofi_music/SoFarAway-ElijahWho-5492647.mp3',
+  },
+  {
+    id: 9,
+    name: 'SpiritedAway',
+    mood: 'chill',
+    src: './assets/lofi_music/SpiritedAwayPiano-Dangcapnhat_y8pn.mp3',
+  },
+  {
+    id: 8,
+    name: 'SpringDay',
+    mood: 'chill',
+    src: './assets/lofi_music/SpringDayLofiVersion-Smyang-5448500.mp3',
+  },
+  {
+    id: 9,
+    name: 'Stigma',
+    mood: 'chill',
+    src: './assets/lofi_music/StigmaLofiVersion-Smyang-5448498.mp3',
+  },
+];
+
+export const jazzy = [
+  {
+    id: 0,
+    name: 'The autumn leaves',
+    mood: 'jazzy',
+    src: './assets/lofi/jazz1.mp3',
+  },
+  {
+    id: 1,
+    name: 'King Joe',
+    mood: 'jazzy',
+    src: './assets/lofi/jazz2.mp3',
+  },
+  {
+    id: 2,
+    name: 'Saxophone',
+    mood: 'jazzy',
+    src: './assets/lofi/jazz3.mp3',
+  },
+  {
+    id: 3,
+    name: 'A Night In Tunisia',
+    mood: 'jazzy',
+    src: './assets/jazz_music/ANightInTunisia-CharlieParker-5877366.mp3',
+  },
+  {
+    id: 4,
+    name: 'IntoTheShadows',
+    mood: 'jazzy',
+    src: './assets/jazz_music/IntoTheShadows-JamesMoody-5736871.mp3',
+  },
+  {
+    id: 5,
+    name: 'MoonlightInVermon',
+    mood: 'jazzy',
+    src: './assets/jazz_music/MoonlightInVermontAlternateVersion-MarianMcPartland-5703725.mp3',
+  },
+  {
+    id: 6,
+    name: 'NatureBoy',
+    mood: 'jazzy',
+    src: './assets/jazz_music/NatureBoy-TheDrummonds-5831308.mp3',
+  },
+  {
+    id: 7,
+    name: 'SoftlyAsInAMorningSunrise',
+    mood: 'jazzy',
+    src: './assets/jazz_music/SoftlyAsInAMorningSunrise-ModernJazzQuartet-5980540.mp3',
+  },
+  {
+    id: 8,
+    name: 'Solace',
+    mood: 'jazzy',
+    src: './assets/jazz_music/Solace-BillyTaylor-5658907.mp3',
+  },
+  {
+    id: 9,
+    name: 'Summertime',
+    mood: 'jazzy',
+    src: './assets/jazz_music/Summertime-DukeJordan-5654922.mp3',
+  },
+  {
+    id: 10,
+    name: 'WhenDarknessFalls',
+    mood: 'jazzy',
+    src: './assets/jazz_music/WhenDarknessFalls-GeorgeShearing-5693064.mp3',
+  },
+  {
+    id: 11,
+    name: 'Yesterdays',
+    mood: 'jazzy',
+    src: './assets/jazz_music/Yesterdays-LarryCoryellKennyBarron-5654907.mp3',
+  },
+];
+
+export const sleep = [
+  {
+    id: 0,
+    name: 'Sleep Sleep Sleep',
+    mood: 'sleep',
+    src: './assets/lofi/sleepy1.mp3',
+  },
+  {
+    id: 1,
+    name: 'Good Night',
+    mood: 'sleep',
+    src: './assets/lofi/sleepy2.mp3',
+  },
+  {
+    id: 2,
+    name: 'Count the sheep',
+    mood: 'sleep',
+    src: './assets/lofi/sleepy3.mp3',
+  },
+  {
+    id: 3,
+    name: 'Dreamee',
+    mood: 'sleep',
+    src: './assets/lofi/sleepy4.mp3',
+  },
+  {
+    id: 4,
+    name: 'ambiant',
+    mood: 'sleep',
+    src: './assets/sleep_music/ambiant-relax-sounds-10621.mp3',
+  },
+  {
+    id: 5,
+    name: 'ambient',
+    mood: 'sleep',
+    src: './assets/sleep_music/ambient-piano-prod-by-balancebay-109400.mp3',
+  },
+  {
+    id: 6,
+    name: 'chill-abstract',
+    mood: 'sleep',
+    src: './assets/sleep_music/chill-abstract-intention-12099.mp3',
+  },
+  {
+    id: 7,
+    name: 'far-from-home',
+    mood: 'sleep',
+    src: './assets/sleep_music/far-from-home-acoustic-version-13463.mp3',
+  },
+  {
+    id: 8,
+    name: 'freezing-night',
+    mood: 'sleep',
+    src: './assets/sleep_music/freezing-night-28066.mp3',
+  },
+  {
+    id: 9,
+    name: 'hidden-place-extended',
+    mood: 'sleep',
+    src: './assets/sleep_music/hidden-place-extended-version-13891.mp3',
+  },
+  {
+    id: 10,
+    name: 'just-relax',
+    mood: 'sleep',
+    src: './assets/sleep_music/just-relax-11157.mp3',
+  },
+  {
+    id: 11,
+    name: 'mindfulness',
+    mood: 'sleep',
+    src: './assets/sleep_music/mindfulness-relaxation-amp-meditation-music-22174.mp3',
+  },
+  {
+    id: 12,
+    name: 'nature',
+    mood: 'sleep',
+    src: './assets/sleep_music/nature-99499.mp3',
+  },
+  {
+    id: 13,
+    name: 'relax-in-the-forest',
+    mood: 'sleep',
+    src: './assets/sleep_music/relax-in-the-forest-background-music-for-video-9145.mp3',
+  },
+  {
+    id: 14,
+    name: 'soft-daydream',
+    mood: 'sleep',
+    src: './assets/sleep_music/soft-daydream-18538.mp3',
+  },
+];

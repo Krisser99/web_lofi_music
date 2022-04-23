@@ -3,23 +3,34 @@ import Stack from '@mui/material/Stack'
 import React, { useState } from 'react'
 import ReactAudioPlayer from 'react-audio-player'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeMoodStatus, changeRainStatus, changeValueStatus } from '../../redux/actions'
+import { changeMoodStatus, changeRainStatus, changeSceneStatus, changeValueVolumeStatus } from '../../redux/actions'
+import CountDownTimer from '../CountDownTimer/CountDownTimer'
 import NoiseSound from '../NoiseSoud/NoiseSound'
+import TodoList from '../TodoList/TodoList'
 import './ModifiedBoard.scss'
-function ModifiedBoard() {
+function ModifiedBoard(props) {
+  const { seconds, minutes, hours, isRunning, pause, resume, timerStart, setTimerStart, OnStartTimer } = props
   const moodState = useSelector(state => state.moodState)
   const volumeState = useSelector(state => state.volumeState)
   const rainState = useSelector(state => state.rainState)
-
-  const { rainValue } = rainState
+  const backgroundState = useSelector(state => state.backgroundState)
 
   const dispatch = useDispatch()
 
   const { mood } = moodState
-
   const { volume } = volumeState
+  const { rainValue } = rainState
+  const { background } = backgroundState
 
   const [openMood, setOpenMood] = useState(false)
+  const [openWall, setOpenWall] = useState(false)
+  const [openScene, setOpenScene] = useState(false)
+  const [openFocus, setOpenFocus] = useState(false)
+
+  const [openChillVabes, setOpenChillVabes] = useState(false)
+  const [openKyoto, setOpenKyoto] = useState(false)
+  const [openCafeShop, setOpenCafeShop] = useState(false)
+
   const [rainCity, setRainCity] = useState(rainValue)
   const [traffic, setTraffic] = useState(0)
   const [fireplace, setFireplace] = useState(0)
@@ -40,11 +51,7 @@ function ModifiedBoard() {
   }
 
   const handleChangeVolume = (e) => {
-    dispatch(changeValueStatus(e.target.value))
-  }
-
-  const handleOpenMood = () => {
-    setOpenMood(!openMood)
+    dispatch(changeValueVolumeStatus(e.target.value))
   }
 
   const handleChangeRain = (e) => {
@@ -53,29 +60,88 @@ function ModifiedBoard() {
     setRainCity(e.target.value)
   }
 
+  const handleOpenMood = () => {
+    setOpenMood(!openMood)
+    setOpenWall(false)
+    setOpenScene(false)
+    setOpenFocus(false)
+  }
+
+  const handleOpenWall = () => {
+    if (openWall === false && openScene === false) {
+      setOpenWall(true)
+    } else if (openWall === false && openScene === true) {
+      setOpenScene(false)
+    } else {
+      setOpenWall(false)
+    }
+    setOpenMood(false)
+    setOpenChillVabes(false)
+    setOpenKyoto(false)
+    setOpenCafeShop(false)
+    setOpenFocus(false)
+  }
+
+  const handleOpenFocus = () => {
+    setOpenFocus(!openFocus)
+    setOpenMood(false)
+    setOpenWall(false)
+    setOpenScene(false)
+  }
+
+  const handleSwitchScene = (e) => {
+    dispatch(changeSceneStatus(e.target.id))
+  }
+
+  const handleOpenChillVabes = () => {
+    setOpenWall(false)
+    setOpenScene(true)
+    setOpenChillVabes(true)
+  }
+
+  const handleOpenKyoto = () => {
+    setOpenScene(true)
+    setOpenWall(false)
+    setOpenKyoto(true)
+  }
+
+  const handleOpenCafeShop = () => {
+    setOpenScene(true)
+    setOpenWall(false)
+    setOpenCafeShop(true)
+  }
+
+  const handleOutScene = () => {
+    setOpenScene(false)
+    setOpenWall(true)
+    setOpenChillVabes(false)
+    setOpenKyoto(false)
+    setOpenCafeShop(false)
+  }
+
   return (
     <>
       <div className="modified">
         <div className={`mood__icon ${openMood && 'active'}`}>
           <i onClick={handleOpenMood} className='fas fa-sliders-h fa-2x'></i>
         </div>
-        {/* Close Modified */}
-        {!openMood && 
-        <NoiseSound 
-          traffic={traffic}
-          fireplace={fireplace}
-          snow={snow}
-          storm={storm}
-          fan={fan}
-          forest={forest}
-          wave={wave}
-          wind={wind}
-          people={people}
-          river={river}
-          rainForest={rainForest}
-        />
+        {/* Close Mood */}
+        {!openMood &&
+          <NoiseSound
+            traffic={traffic}
+            fireplace={fireplace}
+            snow={snow}
+            storm={storm}
+            fan={fan}
+            forest={forest}
+            wave={wave}
+            wind={wind}
+            people={people}
+            river={river}
+            rainForest={rainForest}
+          />
         }
-        {/* Open Modified */}
+        {/* Open Mood */}
         {openMood &&
           <div className="wrapper">
             <h4 className='mood__title'>Mood</h4>
@@ -135,17 +201,20 @@ function ModifiedBoard() {
                 />
                 <Slider className='slider' value={traffic} onChange={(e) => setTraffic(e.target.value)} />
               </div>
-              <div className='noise__options'>
-                <span>City rain</span>
-                <ReactAudioPlayer
-                  preload='auto'
-                  src='/assets/musics/rain_city.mp3'
-                  loop
-                  autoPlay
-                  muted
-                />
-                <Slider className='slider' value={rainValue} onChange={handleChangeRain} />
-              </div>
+              {
+                background === 'kyoto_inside' || background === 'kyoto_outside' || background === 'cafeshop_outside' ? '' :
+                  <div className='noise__options'>
+                    <span>City rain</span>
+                    <ReactAudioPlayer
+                      preload='auto'
+                      src='/assets/musics/rain_city.mp3'
+                      loop
+                      autoPlay
+                      muted
+                    />
+                    <Slider className='slider' value={rainValue} onChange={handleChangeRain} />
+                  </div>
+              }
               <div className='noise__options'>
                 <span>Fireplace</span>
                 <ReactAudioPlayer
@@ -258,6 +327,125 @@ function ModifiedBoard() {
               </div>
             </div>
           </div>
+        }
+        <div className={`background_icon ${openWall && 'active'} ${openScene && 'active'}`}>
+          <i onClick={handleOpenWall} className="fa-solid fa-images fa-2x"></i>
+        </div>
+        {/* Open Wall */}
+        {openWall &&
+          <div className="wall__wrap">
+            <div className="wall__wrap-image">
+              <h4 className='wall__title'>Change Set</h4>
+              <div className={`wall__image ${background === 'chill_vibes' ? 'active' : ''}`}>
+                <img
+                  onClick={handleOpenChillVabes}
+                  src="/assets/thumbs/chill.6d5d8ab2260cceaa865d.png"
+                  alt="hola"
+                />
+              </div>
+              <div className={`wall__image ${background === 'kyoto_inside' || background === 'kyoto_outside' ? 'active' : ''}`}>
+                <img
+                  onClick={handleOpenKyoto}
+                  src="/assets/thumbs/kyotoStreet.e4638e91998fa8a106ed.png"
+                  alt="hola"
+                />
+              </div>
+              <div className={`wall__image ${background === 'cafeshop_inside' || background === 'cafeshop_outside' ? 'active' : ''}`}>
+                <img
+                  onClick={handleOpenCafeShop}
+                  src="/assets/thumbs/book-cafe-preview.2fafe972d1a37ef69971.png"
+                  alt="hola"
+                />
+              </div>
+            </div>
+          </div>
+        }
+        {/* Open Scene */}
+        {openScene &&
+          <div className="wall__chill-wrap">
+            <div className="wall__chill-header">
+              <i onClick={handleOutScene} className="fa-solid fa-angle-left fa-2x"></i>
+              <h4 className='wall__title'>Switch Scense</h4>
+            </div>
+            {openChillVabes &&
+              <>
+                <div id='chill_vibes' className={`wall__chill-image ${background === 'chill_vibes' ? 'active' : ''}`}>
+                  <img
+                    id='chill_vibes'
+                    onClick={handleSwitchScene}
+                    src="/assets/thumbs/bed-room.325fe2dadb340cf1c1c0.png"
+                    alt="hola"
+                  />
+                </div>
+                <div className='wall__chill-image disable'>
+                  <img
+                    src="/assets/thumbs/living-room.4a22430fd6a72bd221e9.png"
+                    alt="hola" />
+                </div>
+              </>
+            }
+            {openKyoto &&
+              <>
+                <div id='kyoto_outside' className={`wall__chill-image ${background === 'kyoto_outside' ? 'active' : ''}`}>
+                  <img
+                    id='kyoto_outside'
+                    onClick={handleSwitchScene}
+                    src="/assets/thumbs/kyotoStreet.e4638e91998fa8a106ed.png"
+                    alt="hola"
+                  />
+                </div>
+                <div id='kyoto_inside' className={`wall__chill-image ${background === 'kyoto_inside' ? 'active' : ''}`}>
+                  <img
+                    id='kyoto_inside'
+                    onClick={handleSwitchScene}
+                    src="/assets/thumbs/kyotoPark.b51ea664f53e787e33b3.png"
+                    alt="hola"
+                  />
+                </div>
+              </>
+            }
+            {openCafeShop &&
+              <>
+                <div id='cafeshop_outside' className={`wall__chill-image ${background === 'cafeshop_outside' ? 'active' : ''}`}>
+                  <img
+                    id='cafeshop_outside'
+                    onClick={handleSwitchScene}
+                    src="/assets/thumbs/book_cafe_preview_out.aeae5beef7737b9ae88e.png"
+                    alt="hola"
+                  />
+                </div>
+                <div id='cafeshop_inside' className={`wall__chill-image ${background === 'cafeshop_inside' ? 'active' : ''}`}>
+                  <img
+                    id='cafeshop_inside'
+                    onClick={handleSwitchScene}
+                    src="/assets/thumbs/book_cafe_preview_in.cf06fd4a92871f248f72.png"
+                    alt="hola"
+                  />
+                </div>
+              </>
+            }
+          </div>
+        }
+        <div className={`focus__icon ${openFocus && 'active'}`}>
+          <i onClick={handleOpenFocus} className='fas fa-book-reader fa-2x'></i>
+        </div>
+        {openFocus &&
+          <>
+            <div className='focus__content'>
+              <CountDownTimer
+                seconds={seconds}
+                minutes={minutes}
+                hours={hours}
+                isRunning={isRunning}
+                pause={pause}
+                resume={resume}
+                timerStart={timerStart}
+                setTimerStart={setTimerStart}
+                OnStartTimer={OnStartTimer}
+              />
+              <TodoList />
+            </div>
+          </>
         }
       </div>
     </>

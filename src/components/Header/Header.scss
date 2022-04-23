@@ -1,3 +1,6 @@
+$primary-color: #f3a952;
+$default-color: #4e5054;
+$blue: #91ccc2;
 .nav {
   &__list {
     position: relative;
@@ -19,13 +22,20 @@
     align-items: center;
     margin-right: 50px;
     & > a {
+      color: #fff;
+      text-decoration: none;
       margin-left: 20px;
       margin-right: 10px;
+      transition: all ease 0.3s;
       &:hover {
+        color: $primary-color;
         span:after {
           opacity: 1;
           transform: scaleX(1);
         }
+      }
+      &:hover > span {
+        color: $primary-color;
       }
     }
     &-text {
@@ -34,6 +44,7 @@
       letter-spacing: 1px;
       color: #fff;
       margin-left: 7px;
+      transition: all ease 0.3s;
       &:after {
         content: "";
         background-color: #fff;
@@ -61,5 +72,20 @@
   }
   &:hover {
     cursor: pointer;
+  }
+}
+
+.user__info {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  & > img {
+    width: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  & > h4 {
+    color: #fff;
+    margin-left: 6px;
   }
 }

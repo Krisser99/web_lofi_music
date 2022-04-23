@@ -2,7 +2,7 @@ import { SET_VOLUME } from "../constants/actionType"
 
 
 const initialVolume = {
-  volume: 0
+  volume: 50
 }
 
 const volumeReducer = (state = initialVolume, action) => {

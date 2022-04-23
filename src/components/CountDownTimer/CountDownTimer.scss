@@ -1,0 +1,77 @@
+$primary-color: #f3a952;
+.countdown {
+  & > h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &__set {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: teal;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 20px;
+    &:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+  }
+  &__noRunning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  &__running {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    & > input {
+      outline: none;
+      background: #14141d;
+      border-radius: 10px;
+      width: 56px;
+      color: #fff;
+      text-align: center;
+      border: 1px solid #f9f9f9;
+    }
+    & > span {
+      color: #fff;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-left: 2px;
+    }
+  }
+}
+
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  & > button {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: teal;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 0px 10px 0 10px;
+    &:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+  }
+}
+
+.control .resume {
+  background-color: $primary-color;
+}
